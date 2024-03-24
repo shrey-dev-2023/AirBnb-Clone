@@ -13,6 +13,7 @@ const fs = require("fs");
 
 require("dotenv").config();
 const app = express();
+const port = process.env.PORT || 8080
 
 const bcryptSalt = bcrypt.genSaltSync(10);
 const jwtSecret = "jkfgnslfsmfghefdslkdfgklds";
@@ -229,4 +230,6 @@ app.get('/bookings', async (req, res) => {
   res.json( await Booking.find({user:userData.id}).populate('place') )
 })
 
-app.listen(4000);
+app.listen(process.env.PORT, () => {
+  console.log(`Server is running on port ${port}`)
+});
