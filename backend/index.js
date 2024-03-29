@@ -230,6 +230,6 @@ app.get('/bookings', async (req, res) => {
   res.json( await Booking.find({user:userData.id}).populate('place') )
 })
 
-app.listen(process.env.PORT, () => {
+app.listen(port, () => {
   console.log(`Server is running on port ${port}`)
 });
