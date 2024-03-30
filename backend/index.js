@@ -26,7 +26,7 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(
   cors({
     credentials: true,
-    origin: "https://air-bnb-clone-nine-beta.vercel.app",
+    origin: "*",
   })
 );
 mongoose.connect(process.env.MONGO_URL);
